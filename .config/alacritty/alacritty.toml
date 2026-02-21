@@ -59,6 +59,6 @@ style = { shape = "Beam", blinking = "On" }
 # Use proper Alt key behavior instead of sending ESC sequences
 # This prevents Alt+j from being interpreted as ESC then j
 bindings = [
-  { key = "J", mods = "Alt", chars = "\u001b[1;3B" },
-  { key = "K", mods = "Alt", chars = "\u001b[1;3A" },
+    { key = "J", mods = "Alt", chars = "\u001b[1;3B" },
+    { key = "K", mods = "Alt", chars = "\u001b[1;3A" },
 ]

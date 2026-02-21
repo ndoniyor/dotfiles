@@ -15,6 +15,20 @@ if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlightin
     git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
 
+# agnoster theme
+if [ ! -f "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/agnoster.zsh-theme" ]; then
+    curl -fsSL https://raw.githubusercontent.com/agnoster/agnoster-zsh-theme/master/agnoster.zsh-theme -o ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/agnoster.zsh-theme
+fi
+
+# JetBrains Mono Nerd Font
+if ! fc-list | grep -qi "JetBrainsMono"; then
+    mkdir -p $HOME/.local/share/fonts
+    curl -fsSL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip" -o /tmp/JetBrainsMono.zip
+    unzip -o /tmp/JetBrainsMono.zip -d $HOME/.local/share/fonts/JetBrainsMono
+    fc-cache -fv
+    rm /tmp/JetBrainsMono.zip
+fi
+
 # zoxide
 if ! command -v zoxide &>/dev/null; then
     curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
