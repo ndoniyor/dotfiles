@@ -1,0 +1,11 @@
+configuration {
+    modi: "drun";
+    show-icons: true;
+    drun-display-format: "{name}";
+    hide-scrollbar: true;
+    click-to-exit: true;
+    hover-select: true;
+    cycle: false;
+}
+
+@theme "theme"

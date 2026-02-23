@@ -1,0 +1,105 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 36,
+  "spacing": 4,
+  "margin-top": 8,
+  "margin-left": 8,
+  "margin-right": 8,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "backlight",
+    "pulseaudio",
+    "cpu",
+    "memory",
+    "network",
+    "battery#bat0",
+    "battery#bat1",
+    "clock",
+  ],
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "active": "●",
+    },
+    "persistent-workspaces": {
+      "*": 5,
+    },
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 60,
+    "icon": true,
+    "icon-size": 18,
+  },
+
+  "clock": {
+    "format": " {:%I:%M%p %m/%d/%Y}",
+    "tooltip": false,
+  },
+
+  "battery#bat0": {
+    "bat": "BAT0",
+    "format": "INT {icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰂃"],
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+  },
+
+  "battery#bat1": {
+    "bat": "BAT1",
+    "format": "EXT {icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰂃"],
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+  },
+
+  "network": {
+    "format-wifi": "󰤨 {essid}",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-disconnected": "󰤭 Disconnected",
+    "tooltip-format-wifi": "Signal: {signalStrength}%",
+    "on-click": "alacritty --class nmtui -e nmtui",
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 2,
+  },
+
+  "memory": {
+    "format": " {percentage}%",
+    "interval": 2,
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 muted",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"],
+    },
+    "on-click": "pavucontrol",
+    "scroll-step": 5,
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+  },
+}

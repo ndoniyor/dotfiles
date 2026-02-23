@@ -35,6 +35,4 @@ if ! command -v zoxide &>/dev/null; then
 fi
 
 # symlink dotfiles
-ln -sf $HOME/code/dotfiles/.zshrc $HOME/.zshrc
-ln -sf $HOME/code/dotfiles/.config/nvim $HOME/.config/nvim
-ln -sf $HOME/code/dotfiles/.config/alacritty $HOME/.config/alacritty
+./sync.sh

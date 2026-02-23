@@ -52,7 +52,8 @@ white = "#ffffff"
 [cursor]
 style = { shape = "Beam", blinking = "On" }
 
-#[shell]
+[terminal.shell]
+program = "/usr/bin/zsh"
 #program = "tmux"
 
 [keyboard]
@@ -61,4 +62,5 @@ style = { shape = "Beam", blinking = "On" }
 bindings = [
     { key = "J", mods = "Alt", chars = "\u001b[1;3B" },
     { key = "K", mods = "Alt", chars = "\u001b[1;3A" },
+    { key = "Return", mods = "Shift", chars = "\u001B\r" },
 ]
